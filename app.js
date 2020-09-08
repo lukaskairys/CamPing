@@ -2,8 +2,8 @@
 const express = require("express"),
       app = express(),
       bodyParser = require("body-parser"),
-      mongoose = require("mongoose");
-      Campground = require("./models/campground")
+      mongoose = require("mongoose"),
+      Campground = require("./models/campground"); //comments
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //Connecting database
@@ -14,7 +14,6 @@ mongoose.connect("mongodb://localhost/camping", {
     .then(() => console.log("Connected to DB"))
     .catch(error => console.log(error.message));
 
-//DB Schema setup
 
 
 /* Campground.create({

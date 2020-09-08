@@ -1,0 +1,32 @@
+<%- include("partials/header") %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Stovyklaviečių asortimentas</h1>
+            <p>Išsirinkite poilsio vietą iš šių krupščiai atrinktų vietelių</p>
+            <p>
+                <a class="btn btn-primary btn-lg" href="/campgrounds/new">Pasiūlyti nuają stovyklavietę</a>
+            </p>
+        </div>
+    </header>
+
+
+    <div class="row text-center" style="display: flex; flex-wrap: wrap">
+        <% campgrounds.forEach(element => { %>
+            <div class="col-md-3 col-sm-6">
+                <div class="card">
+                    <img src="<%=element.image%>" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=element.name%></h5>
+                        <p>
+                            <a href="/campgrounds/<%=element._id%>" class="btn btn-primary">Rodyti informaciją</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+<%- include("partials/footer") %>
